@@ -9,10 +9,6 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = "coi8338dnd83i3()33383ox$$#32dd2nid3d3dd8dqo3d3)#4483mdjnedud";
 
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var testAPIRouter = require('./routes/testAPI');
-
 var app = express();
 
 // view engine setup
@@ -34,10 +30,6 @@ mongoose.connect("mongodb+srv://dheemautin:Nevergiveup2002@cluster12.vgyispf.mon
     console.error('Error connecting to MongoDB', err);
   });
 
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use("/testAPI", testAPIRouter);
 
 //Mongoose Schema
 const quizSchema = new mongoose.Schema({
@@ -208,15 +200,6 @@ app.get("/leader", async (req, resp) => {
       resp.send({error: "Error"});
   }
 });
-
-
-
-
-
-
-
-
-
 
 
 
